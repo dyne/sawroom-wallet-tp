@@ -26,7 +26,7 @@ use sawtooth_sdk::processor::handler::TransactionContext;
 
 pub fn get_sw_prefix() -> String {
         let mut sha = Sha512::new();
-        sha.input_str("simplewallet");
+        sha.input_str("wallet");
         sha.result_str()[..6].to_string()
 }
 
