@@ -113,11 +113,13 @@ impl TransactionHandler for SwTransactionHandler {
 
         match payload.get_action() {
             Action::Deposit => {
-                let deposit_amount = payload.get_value();
+                // let deposit_amount = payload.get_value();
+                let deposit_amount = 0;
                 self.deposit(&mut state, customer_pubkey, deposit_amount)?;
             }
             Action::Withdraw => {
-                let withdraw_amount = payload.get_value();
+                // let withdraw_amount = payload.get_value();
+                let withdraw_amount = 0;
                 self.withdraw(&mut state, customer_pubkey, withdraw_amount)?;
             }
 
