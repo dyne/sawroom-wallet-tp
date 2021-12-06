@@ -228,6 +228,12 @@ impl SwTransactions for SwTransactionHandler {
             )));
         }
 
+        if customer_pubkey.eq(beneficiary_pubkey) {
+            return Err(ApplyError::InvalidTransaction(String::from(
+                "Action: Transfer should involve two different address.",
+            )));
+        }
+
         //Store new balance to state
         state.set(customer_pubkey, current_balance - transfer_amount)?;
         state.set(beneficiary_pubkey, beneficiary_balance + transfer_amount)?;
