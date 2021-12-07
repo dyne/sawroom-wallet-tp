@@ -230,7 +230,7 @@ impl SwTransactions for SwTransactionHandler {
 
         if customer_pubkey.eq(beneficiary_pubkey) {
             return Err(ApplyError::InvalidTransaction(String::from(
-                "Action: Transfer should involve two different address.",
+                "Action: Transfer should involve two different addresses.",
             )));
         }
 
